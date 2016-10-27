@@ -1,0 +1,3 @@
+This buildkit for RetroShare is in the Public Domain, no rights whatsoever
+reserved. You may do whatever you like with it, except sue me if it for
+some reason eats your dog or makes your significant other leave you.

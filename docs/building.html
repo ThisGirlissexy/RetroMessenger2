@@ -1,0 +1,123 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<title>Building RetroMessenger from source</title>
+	<link rel="stylesheet" type="text/css" href="default.css" />
+</head>
+<body>
+<h1  id="T1">Building RetroMessenger from source</h1>
+
+<ul>
+    <li><a href="#T2">Introduction</a></li>
+    <li><a href="#T3">Prerequisites</a></li>
+    <li><a href="#T4">Steps</a>
+    <ul>
+        <li><a href="#T5">1. Generate Project Files</a></li>
+        <li><a href="#T6">2. Build RetroMessenger</a></li>
+    </ul></li>
+    <li><a href="#T7">Final Thoughts</a></li>
+</ul>
+
+
+
+<h2  id="T2">Introduction</h2>
+<p>RetroMessenger aims to be an small, simple, and secure instant messenger. This document will describe the process required to build RetroMessenger from source code. Please pay close attention to every step, as all of them are required.</p>
+
+<h2  id="T3">Prerequisites</h2>
+
+<ul>
+    <li>Windows, Linux, OpenMoko, or Mac OSX (not tested but should work)</li>
+    <li><a href="wxwidgets_install.html" title="wxWidgets install instructions">wxWidgets</a> v2.8.x or higher</li>
+    <li><a href="gcc_install.html" title="GCC install instructions">GCC</a> v3.x.x or higher</li>
+    <li><a href="svn_install.html">Subversion</a></li>
+</ul>
+
+<h2  id="T4">Steps</h2>
+
+<h3  id="T5">1. Generate Project Files</h3>
+
+<ol>
+    <li><p>There are included batch/sh script that you can run to simplify creating the build files. Run the script, for your selected platform, to create the necessary build files.</p>
+    
+    <p><strong>You can skip the next step if you use those.</strong></p>
+    
+    <ul>
+        <li><p><em>Windows:</em></p>
+        
+        <p><code>create_build_files.bat</code></p></li>
+        <li><p><em>Linux:</em></p>
+        
+        <p><code>create_build_files.sh</code></p></li>
+    </ul></li>
+    <li><p>[OPTIONAL] To create the needed build files type:</p>
+    
+    <ul>
+        <li><p>CodeLite Projects and workspace:</p>
+        
+        <ul>
+            <li><p><em>Windows:</em></p>
+            
+            <p><code>premake\premake.exe --target cl-gcc [--unicode] [--with-wx-shared]</code></p></li>
+            <li><p><em>Linux:</em></p>
+            
+            <p><code>premake/premake --target cl-gcc [--unicode] [--with-wx-shared]</code></p></li>
+        </ul></li>
+        <li><p>GNU makefiles:</p>
+        
+        <ul>
+            <li><p><em>Windows:</em></p>
+            
+            <p><code>premake\premake.exe --target gnu [--unicode] [--with-wx-shared]</code></p></li>
+            <li><p><em>Linux:</em></p>
+            
+            <p><code>premake/premake --target gnu [--unicode] [--with-wx-shared]</code></p></li>
+        </ul></li>
+        <li><p>Code::Blocks Projects and workspace:</p>
+        
+        <ul>
+            <li><p><em>Windows:</em></p>
+            
+            <p>premake\premake.exe --target cb-gcc [--unicode] [--with-wx-shared]</p></li>
+            <li><p><em>Linux:</em></p>
+            
+            <p>premake/premake --target cb-gcc [--unicode] [--with-wx-shared]</p></li>
+        </ul></li>
+    </ul></li>
+</ol>
+
+<h3  id="T6">2. Build RetroMessenger</h3>
+
+<p><strong>CodeLite</strong></p>
+
+<ul>
+    <li>Use the generated <code>RetroMessenger.workspace</code> to build RetroMessenger.</li>
+</ul>
+
+<p><strong>GNU makefiles</strong> <small>(Assumes you have properly setup your system to build with gcc or MinGW)</small></p>
+
+<ul>
+    <li><p><em>Release:</em></p>
+    
+    <p><code>make CONFIG=Release</code></p></li>
+    <li><p><em>Debug:</em></p>
+    
+    <p><code>make</code></p></li>
+</ul>
+
+<p><strong>Code::Blocks</strong></p>
+
+<ul>
+    <li>Use the generated <code>RetroMessenger.workspace</code> to build RetroMessenger.</li>
+</ul>
+
+
+<h1  id="T7">Final Thoughts</h1>
+
+<p>Use Premake, for your platform, to generate the build files of your choice.</p>
+
+<p><strong>REMEMBER:</strong> The way you get new additions and updates to the build files you need to run Premake. This is means that it is good practice to run Premake before starting to build or develop RetroMessenger.</p>
+
+<p><a href="index.html">Back</a></p>
+
+</body></html>

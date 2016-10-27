@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<title>Frequently Asked Questions</title>
+	<link rel="stylesheet" type="text/css" href="default.css" />
+</head>
+<body>
+<h1  id="T1">Frequently Asked Questions</h1>
+
+
+
+
+<p><strong>Q</strong>: How do I build RetroMessenger?</p>
+
+<p><strong>A</strong>: Read these <a href="https://retromessenger.svn.sourceforge.net/svnroot/retromessenger/docs/building.html">detailed instructions</a> to get a good idea how to build RetroMessenger. Make sure to note all of the links in the <strong>Prerequisites</strong> section.</p>
+
+<hr/>
+
+<p><strong>Q</strong>: How can I help after I have successfully built RetroMessenger?</p>
+
+<p><strong>A</strong>: You need to have an IDE (<a href="http://codelite.org">CodeLite</a>, <a href="http://codeblocks.org">Code::Blocks</a>, or any editor that can use makefiles(Vim, Emacs)), <a href="http://wxwidgets.org">wxWidgets</a>, <a href="http://wxformbuilder.org">wxFormBuilder</a>, GDB, and GCC installed and functioning 100%.</p>
+
+<p>Now you should work through the tutorials on the <a href="http://wiki.wxformbuilder.org">wxFormBuilder Wiki</a>. After this you should understand the general way that it generates cpp/h and the way wxFormBuilder uses inheritance.</p>
+
+<p>Now I have done most of that GUI design work and have generated the needed files. When you compile RM you should notice there are some warnings about unused variables and those are actually the event handler stub functions. They are written but just need to be filled in with the correct code to carry out the event. The evens should be pretty straight forward to figure out what they should be doing by there name. We should write all the GUI code that we can until we need to actually call the libretroshare code. Then just put a messagebox/comment to hold the place of that function. Does this make sense?</p>
+
+<hr/>
+
+<p><strong>Q</strong>: How do I use wxFormBuilder?</p>
+
+<p><strong>A</strong>: Please visit the <a href="http://wiki.wxformbuilder.org">wxFormBuilder Wiki</a> and read the tutorials that are available. A couple of good ones to read are the <a href="http://wiki.wxformbuilder.org/Tutorials/UsingWxFormBuilder">"Getting Started Guide"</a> and the <a href="http://wiki.wxformbuilder.org/Tutorials/WhyCantIEditTheGeneratedCode">"Why Cant I Edit The Generated Code"</a> article.</p>
+
+<hr/>
+
+<p><strong>Q</strong>: How do I use Subversion?</p>
+
+<p><strong>A</strong>: The <a href="http://svnbook.red-bean.com/nightly/en/index.html">Subversion book</a> offers a really good source to learn all that Subversion has to offer. Please read through the <a href="http://svnbook.red-bean.com/nightly/en/svn.tour.html">Basic Usage</a> section as a bare minimum.</p>
+
+<p><a href="index.html">Back</a></p>
+</body></html>

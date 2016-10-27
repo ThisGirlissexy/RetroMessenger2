@@ -1,0 +1,12 @@
+--- miniupnpc-1.0.orig/Makefile.mingw	2008-01-23 13:31:50.000000000 +0100
++++ miniupnpc-1.0/Makefile.mingw	2008-11-02 17:12:00.953125000 +0100
+@@ -1,7 +1,7 @@
+ # $Id: Makefile.mingw,v 1.7 2008/01/18 11:40:13 nanard Exp $
+ CC = gcc
+-#CFLAGS = -Wall -g -DDEBUG -DSTATICLIB
+-CFLAGS = -Wall -Os -DNDEBUG -DSTATICLIB
++#CFLAGS = -Wall -g -DDEBUG -DSTATICLIB -mno-cygwin -mwindows
++CFLAGS = -Wall -Os -DNDEBUG -DSTATICLIB -mno-cygwin -mwindows
+ LDLIBS = -lws2_32
+ # -lwsock32
+ PYTHON=\utils\python25\python

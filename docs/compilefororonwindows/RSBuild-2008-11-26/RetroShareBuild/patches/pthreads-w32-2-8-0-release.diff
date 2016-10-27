@@ -1,0 +1,14 @@
+diff -ru pthreads-w32-2-8-0-release.orig/GNUmakefile pthreads-w32-2-8-0-release/GNUmakefile
+--- pthreads-w32-2-8-0-release.orig/GNUmakefile	2006-04-30 12:22:33.000000000 +0200
++++ pthreads-w32-2-8-0-release/GNUmakefile	2008-11-02 14:31:23.656250000 +0100
+@@ -58,8 +58,8 @@
+ RANLIB  = $(CROSS)ranlib
+ RC	= $(CROSS)windres
+ 
+-OPT	= $(CLEANUP) -O3 -finline-functions
+-DOPT	= $(CLEANUP) -g -O0
++OPT	= $(CLEANUP) -O3 -finline-functions -mno-cygwin
++DOPT	= $(CLEANUP) -g -O0 -mno-cygwin
+ XOPT	=
+ 
+ RCFLAGS		= --include-dir=.

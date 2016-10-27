@@ -1,0 +1,331 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<meta name="generator" content="MediaWiki 1.13.1" />
+		<meta name="keywords" content="Win32CompileCygwin" />
+		<link rel="shortcut icon" href="/favicon.ico" />
+		<link rel="search" type="application/opensearchdescription+xml" href="/wiki/opensearch_desc.php" title="RetroShare Wiki (en)" />
+		<link title="Creative Commons" type="application/rdf+xml" href="/wiki/index.php?title=Win32CompileCygwin&amp;action=creativecommons" rel="meta" />
+		<link rel="copyright" href="http://www.gnu.org/copyleft/fdl.html" />
+		<link rel="alternate" type="application/rss+xml" title="RetroShare Wiki RSS Feed" href="http://retroshare.sourceforge.net/wiki/index.php?title=Special:RecentChanges&amp;feed=rss" />
+		<link rel="alternate" type="application/atom+xml" title="RetroShare Wiki Atom Feed" href="http://retroshare.sourceforge.net/wiki/index.php?title=Special:RecentChanges&amp;feed=atom" />
+		<title>Win32CompileCygwin - RetroShare Wiki</title>
+		<style type="text/css" media="screen, projection">/*<![CDATA[*/
+			@import "/wiki/skins/common/shared.css?164";
+			@import "/wiki/skins/monobook/main.css?164";
+		/*]]>*/</style>
+		<link rel="stylesheet" type="text/css" media="print" href="/wiki/skins/common/commonPrint.css?164" />
+		<!--[if lt IE 5.5000]><style type="text/css">@import "/wiki/skins/monobook/IE50Fixes.css?164";</style><![endif]-->
+		<!--[if IE 5.5000]><style type="text/css">@import "/wiki/skins/monobook/IE55Fixes.css?164";</style><![endif]-->
+		<!--[if IE 6]><style type="text/css">@import "/wiki/skins/monobook/IE60Fixes.css?164";</style><![endif]-->
+		<!--[if IE 7]><style type="text/css">@import "/wiki/skins/monobook/IE70Fixes.css?164";</style><![endif]-->
+		<!--[if lt IE 7]><script type="text/javascript" src="/wiki/skins/common/IEFixes.js?164"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+		
+		<script type= "text/javascript">/*<![CDATA[*/
+var skin = "monobook";
+var stylepath = "/wiki/skins";
+var wgArticlePath = "/wiki/index.php/$1";
+var wgScriptPath = "/wiki";
+var wgScript = "/wiki/index.php";
+var wgVariantArticlePath = false;
+var wgActionPaths = [];
+var wgServer = "http://retroshare.sourceforge.net";
+var wgCanonicalNamespace = "";
+var wgCanonicalSpecialPageName = false;
+var wgNamespaceNumber = 0;
+var wgPageName = "Win32CompileCygwin";
+var wgTitle = "Win32CompileCygwin";
+var wgAction = "view";
+var wgArticleId = "32";
+var wgIsArticle = true;
+var wgUserName = "User2";
+var wgUserGroups = ["*", "user", "autoconfirmed"];
+var wgUserLanguage = "en";
+var wgContentLanguage = "en";
+var wgBreakFrames = false;
+var wgCurRevisionId = "590";
+var wgVersion = "1.13.1";
+var wgEnableAPI = true;
+var wgEnableWriteAPI = false;
+var wgRestrictionEdit = ["autoconfirmed"];
+var wgRestrictionMove = ["autoconfirmed"];
+var wgAjaxWatch = {"watchMsg": "Watch", "unwatchMsg": "Unwatch", "watchingMsg": "Watching...", "unwatchingMsg": "Unwatching..."};
+/*]]>*/</script>
+                
+		<script type="text/javascript" src="/wiki/skins/common/wikibits.js?164"><!-- wikibits js --></script>
+		<!-- Head Scripts -->
+		<script type="text/javascript" src="/wiki/skins/common/ajax.js?164"></script>
+		<script type="text/javascript" src="/wiki/skins/common/ajaxwatch.js?164"></script>
+		<script type="text/javascript" src="/wiki/index.php?title=-&amp;action=raw&amp;smaxage=0&amp;gen=js&amp;useskin=monobook"><!-- site js --></script>
+		<style type="text/css">/*<![CDATA[*/
+@import "/wiki/index.php?title=MediaWiki:Common.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=18000";
+@import "/wiki/index.php?title=MediaWiki:Monobook.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=18000";
+@import "/wiki/index.php?title=-&action=raw&gen=css&maxage=18000&smaxage=0";
+/*]]>*/</style>
+	</head>
+<body class="mediawiki ns-0 ltr page-Win32CompileCygwin">
+	<div id="globalWrapper">
+		<div id="column-content">
+	<div id="content">
+		<a name="top" id="top"></a>
+				<h1 class="firstHeading">Win32CompileCygwin</h1>
+		<div id="bodyContent">
+			<h3 id="siteSub">From RetroShare Wiki</h3>
+			<div id="contentSub"></div>
+									<div id="jump-to-nav">Jump to: <a href="#column-one">navigation</a>, <a href="#searchInput">search</a></div>			<!-- start content -->
+			<table id="toc" class="toc" summary="Contents"><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1"><a href="#Introduction"><span class="tocnumber">1</span> <span class="toctext">Introduction</span></a></li>
+<li class="toclevel-1"><a href="#Download_and_Install_Cygwin"><span class="tocnumber">2</span> <span class="toctext">Download and Install Cygwin</span></a>
+<ul>
+<li class="toclevel-2"><a href="#Selecting_Cygwin_packages_to_install"><span class="tocnumber">2.1</span> <span class="toctext">Selecting Cygwin packages to install</span></a></li>
+<li class="toclevel-2"><a href="#Download_and_Install_QT4_Opensource_for_Windows"><span class="tocnumber">2.2</span> <span class="toctext">Download and Install QT4 Opensource for Windows</span></a></li>
+<li class="toclevel-2"><a href="#Download_and_Unpack_RetroShare_Build_Kit"><span class="tocnumber">2.3</span> <span class="toctext">Download and Unpack RetroShare Build Kit</span></a></li>
+<li class="toclevel-2"><a href="#Start_the_cygwin_shell"><span class="tocnumber">2.4</span> <span class="toctext">Start the cygwin shell</span></a></li>
+<li class="toclevel-2"><a href="#Run_the_scripts"><span class="tocnumber">2.5</span> <span class="toctext">Run the scripts</span></a>
+<ul>
+<li class="toclevel-3"><a href="#.3D.3D.3D.3D.3D"><span class="tocnumber">2.5.1</span> <span class="toctext">=====</span></a></li>
+<li class="toclevel-3"><a href="#.3D.3D"><span class="tocnumber">2.5.2</span> <span class="toctext">==</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2"><a href="#Build_RetroShare_Gui"><span class="tocnumber">2.6</span> <span class="toctext">Build RetroShare Gui</span></a></li>
+</ul>
+</li>
+</ul>
+</td></tr></table><script type="text/javascript"> if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; showTocToggle(); } </script>
+<a name="Introduction"></a><h1><span class="editsection">[<a href="/wiki/index.php?title=Win32CompileCygwin&amp;action=edit&amp;section=1" title="Edit section: Introduction">edit</a>]</span> <span class="mw-headline">Introduction</span></h1>
+<p>This is a guide for Windows users with a step-by-step instruction to download, install, configure and build your libretroshare.a .
+</p><p>This guide uses <a href="http://www.cygwin.com" class="external text" title="http://www.cygwin.com" rel="nofollow"><b>Cygwin</b></a> a Linux-like environment for Windows used for compilation of the libretroshare.a .
+</p><p>Start off by creating a RetroShare and a download folder on your hard drive where you can put all the installation files:
+</p>
+<pre>C:\Downloads
+</pre>
+<p>For further reference, the assumption is made that the local user will be 'Administrator'.
+</p>
+<a name="Download_and_Install_Cygwin"></a><h1><span class="editsection">[<a href="/wiki/index.php?title=Win32CompileCygwin&amp;action=edit&amp;section=2" title="Edit section: Download and Install Cygwin">edit</a>]</span> <span class="mw-headline">Download and Install Cygwin</span></h1>
+<p>Download the latest <a href="http://www.cygwin.com/cygwin/setup.exe" class="external text" title="http://www.cygwin.com/cygwin/setup.exe" rel="nofollow">Cygwin setup</a> and save it in your download location:
+</p>
+<pre>C:\Downloads\
+</pre>
+<p>More info about Cygwin can be found at <a href="http://www.cygwin.com" class="external free" title="http://www.cygwin.com" rel="nofollow">http://www.cygwin.com</a> or <a href="http://sourceware.org/cygwin" class="external free" title="http://sourceware.org/cygwin" rel="nofollow">http://sourceware.org/cygwin</a>
+</p>
+<a name="Selecting_Cygwin_packages_to_install"></a><h2><span class="editsection">[<a href="/wiki/index.php?title=Win32CompileCygwin&amp;action=edit&amp;section=3" title="Edit section: Selecting Cygwin packages to install">edit</a>]</span> <span class="mw-headline">Selecting Cygwin packages to install</span></h2>
+<p>Run the setup program with the following options:
+</p><p>1 Next
+</p><p>2 Installation type&nbsp;: Install from Internet (default) NEXT
+</p><p>3 Root directory&nbsp;: C:\cygwin (default) NEXT
+</p><p>4 Local Package directory&nbsp;: C:\cygwin\download (your download location) NEXT
+</p><p>5 Internet Connection&nbsp;: Direct Connection (preferred, if it fails try another) NEXT
+</p><p>6 Select a mirror close to you, Choose Download Site&nbsp;: Choose a download site closest to you (FTP preferred)NEXT
+</p><p>7 Select the following packages:
+</p>
+<pre>   Devel -&gt; gcc, gcc-g++, gdb, make, patchutils, subversion
+   Utils -&gt; diffutils
+   Web   -&gt; wget
+</pre>
+<p>8 NEXT
+</p><p>9 FINISH
+</p>
+<a name="Download_and_Install_QT4_Opensource_for_Windows"></a><h2><span class="editsection">[<a href="/wiki/index.php?title=Win32CompileCygwin&amp;action=edit&amp;section=4" title="Edit section: Download and Install QT4 Opensource for Windows">edit</a>]</span> <span class="mw-headline"> Download and Install QT4 Opensource for Windows </span></h2>
+<p><b>Download the <a href="ftp://ftp.trolltech.com/qt/source/qt-win-opensource-4.4.3-mingw.exe" class="external text" title="ftp://ftp.trolltech.com/qt/source/qt-win-opensource-4.4.3-mingw.exe" rel="nofollow">QT4 Opensource for Windows</a> (Qt with the MinGW compiler):</b>
+<a href="ftp://ftp.trolltech.com/qt/source/qt-win-opensource-4.4.3-mingw.exe" class="external text" title="ftp://ftp.trolltech.com/qt/source/qt-win-opensource-4.4.3-mingw.exe" rel="nofollow">qt-win-opensource-4.4.3-mingw.exe</a>
+after download finished Install it and go to the next step.
+</p>
+<a name="Download_and_Unpack_RetroShare_Build_Kit"></a><h2><span class="editsection">[<a href="/wiki/index.php?title=Win32CompileCygwin&amp;action=edit&amp;section=5" title="Edit section: Download and Unpack RetroShare Build Kit">edit</a>]</span> <span class="mw-headline">Download and Unpack RetroShare Build Kit</span></h2>
+<p>Download the <a href="http://retroshare.sourceforge.net/forum/download/file.php?id=4" class="external text" title="http://retroshare.sourceforge.net/forum/download/file.php?id=4" rel="nofollow">RetroShareBuild-2008-11-26.zip</a> and save it in your download location:
+</p>
+ <pre>C:\Downloads\</pre>
+<p><br />
+So you have downloaded it, now unzip into this directory:
+</p>
+<pre>C:\Downloads\RetroShareBuild</pre>
+<p><br />
+The following Picture shows the command to start cygwin in a path, unpack into
+</p>
+<pre>C:\RetroShareBuild</pre>
+<a name="Start_the_cygwin_shell"></a><h2><span class="editsection">[<a href="/wiki/index.php?title=Win32CompileCygwin&amp;action=edit&amp;section=6" title="Edit section: Start the cygwin shell">edit</a>]</span> <span class="mw-headline"> Start the cygwin shell </span></h2>
+<p>cd to the directory with this buildkit. use cd .. to go to the top level several times.
+then "cd /cygdrive/" is the command and then add the path, where you unzipped the RetroShareBuild folder: "c/RetroShareBuild"
+</p>
+<pre>cd /cygdrive/c/RetroShareBuild</pre>
+<p><a href="/wiki/index.php/Image:Cygwin_cdretrosharebuild.png" class="image" title="Image:Cygwin_cdretrosharebuild.png"><img alt="Image:Cygwin_cdretrosharebuild.png" src="/wiki/images/b/b2/Cygwin_cdretrosharebuild.png" width="605" height="144" border="0" /></a>
+<br />
+</p><p><br />
+In the end the command was successful, if you just have a "$" in the next line, as the pic shows.
+</p>
+<a name="Run_the_scripts"></a><h2><span class="editsection">[<a href="/wiki/index.php?title=Win32CompileCygwin&amp;action=edit&amp;section=7" title="Edit section: Run the scripts">edit</a>]</span> <span class="mw-headline"> Run the scripts </span></h2>
+<p>run the scripts in order (by default downloads this Build Kit SVN Revision 767 for compile! -&gt;  the SVN for Retroshare 767 is meant, as we today have SVN 1047 for retroshare already, maybe the script needs to be updated to download retroshare SVN 1047 at least&nbsp;??? ):
+</p>
+<pre>./1_make_build_env.sh</pre>
+<p><br />
+Message "Error: miniupnp.a is only needed" is ok, as only miniupnp.a is needed.
+</p>
+<pre>./2_prepare_retroshare.sh</pre>
+<p>Now you need to accept the SVN sf.net server certificate, press "p" for permanent accept.
+Indeed the version SVN 767 is checked out, but after compile cygwin gives you the notice:
+</p>
+<a name=".3D.3D.3D.3D.3D"></a><h6><span class="editsection">[<a href="/wiki/index.php?title=Win32CompileCygwin&amp;action=edit&amp;section=8" title="Edit section: =====">edit</a>]</span> <span class="mw-headline">=====</span></h6>
+<p>" 
+run 3 and 4 in cygwin, and if it works, update with this command (in qt command promt I guess): cd src/RetroShare-work; svn-update; make clean
+"
+If you later test this command, it is not working,
+try just "make clean"
+It should automatically open the right path, if not, try "cd src/RetroShare-work; svn-update; make clean" or go to the "src/RetroShare-work"-path with "cd src" command.
+</p><p>The command SVN-update is not working for cygwin here.
+So change in the file "2_prepare_retroshare.sh" (open with txt editor or better VIM) the revision 767 (line 3 of the sh-file) to a higher, more actual revision and start the whole process new.
+</p>
+<a name=".3D.3D"></a><h5><span class="editsection">[<a href="/wiki/index.php?title=Win32CompileCygwin&amp;action=edit&amp;section=9" title="Edit section: ==">edit</a>]</span> <span class="mw-headline">==</span></h5>
+<p>so we live now with version SVN 767 and do first step 3 and 4:
+</p>
+<pre>./3_build_libretroshare.sh</pre>
+<p>Several warnings in the build notices.. we can ignore.
+</p><p>when is don leave the cygwin shell.
+</p>
+<a name="Build_RetroShare_Gui"></a><h2><span class="editsection">[<a href="/wiki/index.php?title=Win32CompileCygwin&amp;action=edit&amp;section=10" title="Edit section: Build RetroShare Gui">edit</a>]</span> <span class="mw-headline"> Build RetroShare Gui </span></h2>
+<p>now start with double click  4_build_retroshare-gui.bat 
+</p><p>after compiling is finished you get the RetroShare Windows binary in
+</p>
+<pre>src/RetroShare-work/retroshare-gui/src/release/RetroShare.exe</pre>
+<p>When you have trouble that the *.bat will not start?, then open
+"QT 4.4.3 Command Prompt":
+</p><p>"cd .." is the command to get one path higher.
+then use "cd downloads" and then "cd RetroShareBuild" to find the right path.
+Then you can type the command "4_build_retroshare-gui.bat "
+</p><p>(be sure that in the filename: the _ _ follows a "-" (minus), not again "_")
+</p><p>and qt compiles...
+</p><p>___
+</p><p>cd:ing to build-kit dir and run *.bat-file
+</p><p><a href="/wiki/index.php/Image:Qtcommand.png" class="image" title="Image:Qtcommand.png"><img alt="Image:Qtcommand.png" src="/wiki/images/b/b0/Qtcommand.png" width="504" height="210" border="0" /></a>
+<br />
+follow the rest of the instructions in doc/readme.txt (looked it up, but there is no more additionally information, so you do not need to look it up).
+</p>
+<!-- 
+NewPP limit report
+Preprocessor node count: 37/1000000
+Post-expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key r178712_wikidb:pcache:idhash:32-0!1!0!!en!2 and timestamp 20090221231242 -->
+<div class="printfooter">
+Retrieved from "<a href="http://retroshare.sourceforge.net/wiki/index.php/Win32CompileCygwin">http://retroshare.sourceforge.net/wiki/index.php/Win32CompileCygwin</a>"</div>
+						<!-- end content -->
+			<div class="visualClear"></div>
+		</div>
+	</div>
+		</div>
+		<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>Views</h5>
+		<div class="pBody">
+			<ul>
+	
+				 <li id="ca-nstab-main" class="selected"><a href="/wiki/index.php/Win32CompileCygwin" title="View the content page [c]" accesskey="c">Page</a></li>
+				 <li id="ca-talk" class="new"><a href="/wiki/index.php?title=Talk:Win32CompileCygwin&amp;action=edit" title="Discussion about the content page [t]" accesskey="t">Discussion</a></li>
+				 <li id="ca-edit"><a href="/wiki/index.php?title=Win32CompileCygwin&amp;action=edit" title="You can edit this page.&#10;Please use the preview button before saving. [e]" accesskey="e">Edit</a></li>
+				 <li id="ca-history"><a href="/wiki/index.php?title=Win32CompileCygwin&amp;action=history" title="Past versions of this page. [h]" accesskey="h">History</a></li>
+				 <li id="ca-move"><a href="/wiki/index.php/Special:MovePage/Win32CompileCygwin" title="Move this page [m]" accesskey="m">Move</a></li>
+				 <li id="ca-watch"><a href="/wiki/index.php?title=Win32CompileCygwin&amp;action=watch" title="Add this page to your watchlist [w]" accesskey="w">Watch</a></li>			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>Personal tools</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-userpage"><a href="/wiki/index.php/User:User2" title="My user page [.]" accesskey="." class="new">User2</a></li>
+				<li id="pt-mytalk"><a href="/wiki/index.php/User_talk:User2" title="My talk page [n]" accesskey="n" class="new">My talk</a></li>
+				<li id="pt-preferences"><a href="/wiki/index.php/Special:Preferences" title="My preferences">My preferences</a></li>
+				<li id="pt-watchlist"><a href="/wiki/index.php/Special:Watchlist" title="The list of pages you&#039;re monitoring for changes [l]" accesskey="l">My watchlist</a></li>
+				<li id="pt-mycontris"><a href="/wiki/index.php/Special:Contributions/User2" title="List of my contributions [y]" accesskey="y">My contributions</a></li>
+				<li id="pt-logout"><a href="/wiki/index.php?title=Special:UserLogout&amp;returnto=Win32CompileCygwin" title="Log out">Log out</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a style="background-image: url(/wiki/skins/common/images/retrosharelogo1.png);" href="/wiki/index.php/Main_Page" title="Visit the Main Page [z]" accesskey="z"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+	<div class='generated-sidebar portlet' id='p-site_navigation'>
+		<h5>site navigation</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage-description"><a href="/wiki/index.php/Main_Page">Main Page</a></li>
+				<li id="n-Developers-Corner"><a href="/wiki/index.php/Developers_Corner">Developers Corner</a></li>
+				<li id="n-Documentation"><a href="/wiki/index.php/Documentation">Documentation</a></li>
+				<li id="n-Knowledge-Base"><a href="/wiki/index.php/Knowledge_Base">Knowledge Base</a></li>
+				<li id="n-Development"><a href="/wiki/index.php/Development">Development</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class='generated-sidebar portlet' id='p-retroshare_websites'>
+		<h5>retroshare websites</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-RetroShare.27s-Site"><a href="http://retroshare.sourceforge.net/">RetroShare's Site</a></li>
+				<li id="n-RetroShare.27s-Forums"><a href="http://retroshare.sourceforge.net/forum/">RetroShare's Forums</a></li>
+				<li id="n-Developers.27s-Site"><a href="http://retroshare.sourceforge.net/developers.html">Developers's Site</a></li>
+				<li id="n-Project-Site"><a href="http://sourceforge.net/projects/retroshare">Project Site</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class='generated-sidebar portlet' id='p-important_pages'>
+		<h5>important pages</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-RetroShare"><a href="/wiki/index.php/RetroShare">RetroShare</a></li>
+				<li id="n-Help-the-Project"><a href="/wiki/index.php/Help_RetroShare">Help the Project</a></li>
+				<li id="n-Donations"><a href="/wiki/index.php/RetroShare_Wiki:Site_support">Donations</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class='generated-sidebar portlet' id='p-wiki'>
+		<h5>wiki</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-Rules"><a href="/wiki/index.php/RetroShare_Wiki:Rules">Rules</a></li>
+				<li id="n-help"><a href="/wiki/index.php/Help:Contents" title="The place to find out.">Help</a></li>
+			</ul>
+		</div>
+	</div>
+	<div id="p-search" class="portlet">
+		<h5><label for="searchInput">Search</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/wiki/index.php/Special:Search" id="searchform"><div>
+				<input id="searchInput" name="search" type="text" title="Search RetroShare Wiki [f]" accesskey="f" value="" />
+				<input type='submit' name="go" class="searchButton" id="searchGoButton"	value="Go" title="Go to a page with this exact name if exists" />&nbsp;
+				<input type='submit' name="fulltext" class="searchButton" id="mw-searchButton" value="Search" title="Search the pages for this text" />
+			</div></form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>Toolbox</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a href="/wiki/index.php/Special:WhatLinksHere/Win32CompileCygwin" title="List of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+				<li id="t-recentchangeslinked"><a href="/wiki/index.php/Special:RecentChangesLinked/Win32CompileCygwin" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+<li id="t-upload"><a href="/wiki/index.php/Special:Upload" title="Upload files [u]" accesskey="u">Upload file</a></li>
+<li id="t-specialpages"><a href="/wiki/index.php/Special:SpecialPages" title="List of all special pages [q]" accesskey="q">Special pages</a></li>
+				<li id="t-print"><a href="/wiki/index.php?title=Win32CompileCygwin&amp;printable=yes" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>				<li id="t-permalink"><a href="/wiki/index.php?title=Win32CompileCygwin&amp;oldid=590" title="Permanent link to this version of the page">Permanent link</a></li>			</ul>
+		</div>
+	</div>
+		</div><!-- end of the left (by default at least) column -->
+			<div class="visualClear"></div>
+			<div id="footer">
+				<div id="f-poweredbyico"><a href="http://www.mediawiki.org/"><img src="/wiki/skins/common/images/poweredby_mediawiki_88x31.png" alt="MediaWiki" /></a><a href="http://sourceforge.net"><img src="http://sflogo.sourceforge.net/sflogo.php?group_id=178712&type=1" width="88" height="31" border="0" alt="SourceForge.net Logo" /></a></div>
+				<div id="f-copyrightico"><a href="http://www.gnu.org/copyleft/fdl.html"><img src="/wiki/skins/common/images/gnu-fdl.png" alt='GNU Free Documentation License 1.2' /></a></div>
+			<ul id="f-list">
+				<li id="lastmod"> This page was last modified on 21 February 2009, at 23:12.</li>
+				<li id="viewcount">This page has been accessed 314 times.</li>
+				<li id="copyright">Content is available under <a href="http://www.gnu.org/copyleft/fdl.html" class="external " title="http://www.gnu.org/copyleft/fdl.html" rel="nofollow">GNU Free Documentation License 1.2</a>.</li>
+				<li id="privacy"><a href="/wiki/index.php/RetroShare_Wiki:Privacy_policy" title="RetroShare Wiki:Privacy policy">Privacy policy</a></li>
+				<li id="about"><a href="/wiki/index.php/RetroShare_Wiki:About" title="RetroShare Wiki:About">About RetroShare Wiki</a></li>
+				<li id="disclaimer"><a href="/wiki/index.php/RetroShare_Wiki:General_disclaimer" title="RetroShare Wiki:General disclaimer">Disclaimers</a></li>
+			</ul>
+		</div>
+</div>
+
+		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+<!-- Served in 0.256 secs. --></body></html>

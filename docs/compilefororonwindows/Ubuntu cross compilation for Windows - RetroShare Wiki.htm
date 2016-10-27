@@ -1,0 +1,332 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<meta name="generator" content="MediaWiki 1.13.1" />
+		<meta name="keywords" content="Ubuntu cross compilation for Windows" />
+		<link rel="shortcut icon" href="/favicon.ico" />
+		<link rel="search" type="application/opensearchdescription+xml" href="/wiki/opensearch_desc.php" title="RetroShare Wiki (en)" />
+		<link title="Creative Commons" type="application/rdf+xml" href="/wiki/index.php?title=Ubuntu_cross_compilation_for_Windows&amp;action=creativecommons" rel="meta" />
+		<link rel="copyright" href="http://www.gnu.org/copyleft/fdl.html" />
+		<link rel="alternate" type="application/rss+xml" title="RetroShare Wiki RSS Feed" href="http://retroshare.sourceforge.net/wiki/index.php?title=Special:RecentChanges&amp;feed=rss" />
+		<link rel="alternate" type="application/atom+xml" title="RetroShare Wiki Atom Feed" href="http://retroshare.sourceforge.net/wiki/index.php?title=Special:RecentChanges&amp;feed=atom" />
+		<title>Ubuntu cross compilation for Windows - RetroShare Wiki</title>
+		<style type="text/css" media="screen, projection">/*<![CDATA[*/
+			@import "/wiki/skins/common/shared.css?164";
+			@import "/wiki/skins/monobook/main.css?164";
+		/*]]>*/</style>
+		<link rel="stylesheet" type="text/css" media="print" href="/wiki/skins/common/commonPrint.css?164" />
+		<!--[if lt IE 5.5000]><style type="text/css">@import "/wiki/skins/monobook/IE50Fixes.css?164";</style><![endif]-->
+		<!--[if IE 5.5000]><style type="text/css">@import "/wiki/skins/monobook/IE55Fixes.css?164";</style><![endif]-->
+		<!--[if IE 6]><style type="text/css">@import "/wiki/skins/monobook/IE60Fixes.css?164";</style><![endif]-->
+		<!--[if IE 7]><style type="text/css">@import "/wiki/skins/monobook/IE70Fixes.css?164";</style><![endif]-->
+		<!--[if lt IE 7]><script type="text/javascript" src="/wiki/skins/common/IEFixes.js?164"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+		
+		<script type= "text/javascript">/*<![CDATA[*/
+var skin = "monobook";
+var stylepath = "/wiki/skins";
+var wgArticlePath = "/wiki/index.php/$1";
+var wgScriptPath = "/wiki";
+var wgScript = "/wiki/index.php";
+var wgVariantArticlePath = false;
+var wgActionPaths = [];
+var wgServer = "http://retroshare.sourceforge.net";
+var wgCanonicalNamespace = "";
+var wgCanonicalSpecialPageName = false;
+var wgNamespaceNumber = 0;
+var wgPageName = "Ubuntu_cross_compilation_for_Windows";
+var wgTitle = "Ubuntu cross compilation for Windows";
+var wgAction = "view";
+var wgArticleId = "70";
+var wgIsArticle = true;
+var wgUserName = null;
+var wgUserGroups = null;
+var wgUserLanguage = "en";
+var wgContentLanguage = "en";
+var wgBreakFrames = false;
+var wgCurRevisionId = "512";
+var wgVersion = "1.13.1";
+var wgEnableAPI = true;
+var wgEnableWriteAPI = false;
+var wgRestrictionEdit = ["autoconfirmed"];
+var wgRestrictionMove = ["autoconfirmed"];
+/*]]>*/</script>
+                
+		<script type="text/javascript" src="/wiki/skins/common/wikibits.js?164"><!-- wikibits js --></script>
+		<!-- Head Scripts -->
+		<script type="text/javascript" src="/wiki/skins/common/ajax.js?164"></script>
+		<script type="text/javascript" src="/wiki/index.php?title=-&amp;action=raw&amp;gen=js&amp;useskin=monobook"><!-- site js --></script>
+		<style type="text/css">/*<![CDATA[*/
+@import "/wiki/index.php?title=MediaWiki:Common.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=18000";
+@import "/wiki/index.php?title=MediaWiki:Monobook.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=18000";
+@import "/wiki/index.php?title=-&action=raw&gen=css&maxage=18000";
+/*]]>*/</style>
+	</head>
+<body class="mediawiki ns-0 ltr page-Ubuntu_cross_compilation_for_Windows">
+	<div id="globalWrapper">
+		<div id="column-content">
+	<div id="content">
+		<a name="top" id="top"></a>
+				<h1 class="firstHeading">Ubuntu cross compilation for Windows</h1>
+		<div id="bodyContent">
+			<h3 id="siteSub">From RetroShare Wiki</h3>
+			<div id="contentSub"></div>
+									<div id="jump-to-nav">Jump to: <a href="#column-one">navigation</a>, <a href="#searchInput">search</a></div>			<!-- start content -->
+			<p>This page explains how to compile RetroShare for windows on Ubuntu using cross-compilation with <code>mingw</code>. Basically, once your 
+environmentn is properly set, you just have to <code>qmake+make</code> and you get a win32 exe.
+</p>
+<table id="toc" class="toc" summary="Contents"><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1"><a href="#Preparing_the_cross-compilation_environment"><span class="tocnumber">1</span> <span class="toctext">Preparing the cross-compilation environment</span></a>
+<ul>
+<li class="toclevel-2"><a href="#Basics"><span class="tocnumber">1.1</span> <span class="toctext">Basics</span></a></li>
+<li class="toclevel-2"><a href="#Installing_the_Qt4_environment"><span class="tocnumber">1.2</span> <span class="toctext">Installing the Qt4 environment</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a href="#Compiling_libretroshare.a"><span class="tocnumber">2</span> <span class="toctext">Compiling libretroshare.a</span></a></li>
+<li class="toclevel-1"><a href="#Compiling_RetroShare.exe"><span class="tocnumber">3</span> <span class="toctext">Compiling RetroShare.exe</span></a></li>
+</ul>
+</td></tr></table><script type="text/javascript"> if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; showTocToggle(); } </script>
+<a name="Preparing_the_cross-compilation_environment"></a><h2> <span class="mw-headline">Preparing the cross-compilation environment</span></h2>
+<a name="Basics"></a><h3> <span class="mw-headline">Basics</span></h3>
+<pre>&gt; sudo apt-get install wine mingw32 mingw32-binutils mingw32-runtime
+</pre>
+<p>This is all what is needed for basic cross-compilation. Let's make a try:
+</p>
+<pre>
+#include &lt;windows.h&gt;
+
+int APIENTRY WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
+    LPSTR lpCmdLine, int nCmdShow)
+{
+  MessageBox(NULL,
+    &quot;Cette fenêtre prouve que le cross-compilateur est fonctionnel&nbsp;!&quot;,
+    &quot;Hello World&quot;, MB_OK);
+  return 0;
+}
+</pre>
+<p>Compile this using: 
+</p>
+<pre>&gt; i586-mingw32msvc-g++ -o essai.exe essai.cpp
+</pre>
+<p>To execute, you need the mingw library: <code>mingwm10.dll</code>:
+</p>
+<pre>&gt; gunzip -c /usr/share/doc/mingw32-runtime/mingwm10.dll.gz &gt; mingwm10.dll
+</pre>
+<p>Then you can launch it:
+</p>
+<pre>&gt; wine essai.exe
+</pre>
+<p>You should see a window in Windows style.
+</p>
+<a name="Installing_the_Qt4_environment"></a><h3> <span class="mw-headline">Installing the Qt4 environment</span></h3>
+<p>Let's get into more involved stuff, and install Qt libraries:
+</p>
+<pre>&gt; sudo apt-get install libqt4-core libqt4-gui libqt4-qt3support libqt4-sql libqt4-debug-dev libqt4-dev
+</pre>
+<p>... as well as qt dev files for mingw:
+</p>
+<pre>&gt; wget <a href="http://wftp.tu-chemnitz.de/pub/Qt/qt/source/qt-win-opensource-4.4.3-mingw.exe" class="external free" title="http://wftp.tu-chemnitz.de/pub/Qt/qt/source/qt-win-opensource-4.4.3-mingw.exe" rel="nofollow">http://wftp.tu-chemnitz.de/pub/Qt/qt/source/qt-win-opensource-4.4.3-mingw.exe</a>
+</pre>
+<p>... and extract them:
+</p>
+<pre>&gt; wine qt-win-opensource-4.4.3-mingw.exe
+</pre>
+<p>Notes: 
+</p>
+<ul><li> No need to download MinGW during the install
+</li><li> don't forget to register the dll's in wine's config, as proposed.
+</li></ul>
+<p>Now, copy the original spec file to the cross compilation environment:
+</p>
+<pre>&gt; sudo cp -Rf /usr/share/qt4/mkspecs/win32-g++ /usr/share/qt4/mkspecs/win32-x-g++
+&gt; sudo vi /usr/share/qt4/mkspecs/win32-x-g++/qmake.conf
+</pre>
+<p>Now perform the following changes into qmake.conf:
+</p>
+<pre>
+QMAKE_CXX               = i586-mingw32msvc-g++
+
+QMAKE_INCDIR            = /usr/i586-mingw32msvc/include/
+QMAKE_INCDIR_QT         = /usr/local/qt4-w32/4.4.3/include
+QMAKE_LIBDIR_QT         = /usr/local/qt4-w32/4.4.3/lib
+
+QMAKE_LINK              = i586-mingw32msvc-g++
+
+# ne pas oublier le -mwindows ici
+QMAKE_LFLAGS            = -mthreads -Wl,-enable-stdcall-fixup -Wl,-enable-auto-import -Wl,-enable-runtime-pseudo-reloc -mwindows
+
+#isEqual(MINGW_IN_SHELL, 1) {
+        QMAKE_DIR_SEP           = /
+        QMAKE_COPY              = cp
+        QMAKE_COPY_DIR          = cp -r
+        QMAKE_MOVE              = mv
+        QMAKE_DEL_FILE          = rm -f
+        QMAKE_MKDIR             = mkdir -p
+        QMAKE_DEL_DIR           = rm -rf
+#} else {
+#       QMAKE_COPY              = cp
+#       QMAKE_COPY_DIR          = cp -r
+#       QMAKE_MOVE              = mv
+#       QMAKE_DEL_FILE          = rm -f
+#       QMAKE_MKDIR             = mkdir -p
+#       QMAKE_DEL_DIR           = rm -rf
+#}
+
+# Remove .exe and add -qt4
+QMAKE_MOC               = $$[QT_INSTALL_BINS]$${DIR_SEPARATOR}moc-qt4
+QMAKE_UIC               = $$[QT_INSTALL_BINS]$${DIR_SEPARATOR}uic-qt4
+
+# Nothing looks like this, so I removed the .exe
+QMAKE_IDC               = $$[QT_INSTALL_BINS]$${DIR_SEPARATOR}idc
+QMAKE_RC                = i586-mingw32msvc-windres
+QMAKE_STRIP             = i586-mingw32msvc-strip
+</pre>
+<p>From now on, Qt4 compilation looks like this:
+</p>
+<pre>qmake-qt4 -spec win32-x-g++
+make
+</pre>
+<p>Sources&nbsp;:
+</p>
+<ul><li> <a href="http://silmor.de/29" class="external free" title="http://silmor.de/29" rel="nofollow">http://silmor.de/29</a>
+</li><li> <a href="http://www.dumbbell.fr/howto/win32-cross-compilation.fr.html" class="external free" title="http://www.dumbbell.fr/howto/win32-cross-compilation.fr.html" rel="nofollow">http://www.dumbbell.fr/howto/win32-cross-compilation.fr.html</a>
+</li></ul>
+<a name="Compiling_libretroshare.a"></a><h2> <span class="mw-headline">Compiling libretroshare.a</span></h2>
+<p>Go to the <code>libretroshare/src</code> directory and type:
+</p>
+<pre>&gt; qmake -spec win32-x-g++ CONFIG=release
+&gt; make
+</pre>
+<p>On my system, the last command called by the compilation is <code>ar</code> although it should be <code>/usr/i586-mingw32msvc-ar</code>, so I re-run this last command manually.
+</p>
+<a name="Compiling_RetroShare.exe"></a><h2> <span class="mw-headline">Compiling RetroShare.exe</span></h2>
+<p>Go to <code>retroshare-gui/src</code>, and type:
+</p>
+<pre>&gt; qmake -spec win32-x-g++ CONFIG=release
+&gt; make
+</pre>
+<p>You should get a <code>RetroShare.exe</code> file in the <code>release</code> directory.
+</p>
+<!-- 
+NewPP limit report
+Preprocessor node count: 21/1000000
+Post-expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key r178712_wikidb:pcache:idhash:70-0!1!0!!en!2!edit=0 and timestamp 20090221191607 -->
+<div class="printfooter">
+Retrieved from "<a href="http://retroshare.sourceforge.net/wiki/index.php/Ubuntu_cross_compilation_for_Windows">http://retroshare.sourceforge.net/wiki/index.php/Ubuntu_cross_compilation_for_Windows</a>"</div>
+						<!-- end content -->
+			<div class="visualClear"></div>
+		</div>
+	</div>
+		</div>
+		<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>Views</h5>
+		<div class="pBody">
+			<ul>
+	
+				 <li id="ca-nstab-main" class="selected"><a href="/wiki/index.php/Ubuntu_cross_compilation_for_Windows" title="View the content page [c]" accesskey="c">Page</a></li>
+				 <li id="ca-talk" class="new"><a href="/wiki/index.php?title=Talk:Ubuntu_cross_compilation_for_Windows&amp;action=edit" title="Discussion about the content page [t]" accesskey="t">Discussion</a></li>
+				 <li id="ca-viewsource"><a href="/wiki/index.php?title=Ubuntu_cross_compilation_for_Windows&amp;action=edit" title="This page is protected.&#10;You can view its source. [e]" accesskey="e">View source</a></li>
+				 <li id="ca-history"><a href="/wiki/index.php?title=Ubuntu_cross_compilation_for_Windows&amp;action=history" title="Past versions of this page. [h]" accesskey="h">History</a></li>			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>Personal tools</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a href="/wiki/index.php?title=Special:UserLogin&amp;returnto=Ubuntu_cross_compilation_for_Windows" title="You are encouraged to log in, it is not mandatory however. [o]" accesskey="o">Log in / create account</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a style="background-image: url(/wiki/skins/common/images/retrosharelogo1.png);" href="/wiki/index.php/Main_Page" title="Visit the Main Page [z]" accesskey="z"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+	<div class='generated-sidebar portlet' id='p-site_navigation'>
+		<h5>site navigation</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage-description"><a href="/wiki/index.php/Main_Page">Main Page</a></li>
+				<li id="n-Developers-Corner"><a href="/wiki/index.php/Developers_Corner">Developers Corner</a></li>
+				<li id="n-Documentation"><a href="/wiki/index.php/Documentation">Documentation</a></li>
+				<li id="n-Knowledge-Base"><a href="/wiki/index.php/Knowledge_Base">Knowledge Base</a></li>
+				<li id="n-Development"><a href="/wiki/index.php/Development">Development</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class='generated-sidebar portlet' id='p-retroshare_websites'>
+		<h5>retroshare websites</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-RetroShare.27s-Site"><a href="http://retroshare.sourceforge.net/">RetroShare's Site</a></li>
+				<li id="n-RetroShare.27s-Forums"><a href="http://retroshare.sourceforge.net/forum/">RetroShare's Forums</a></li>
+				<li id="n-Developers.27s-Site"><a href="http://retroshare.sourceforge.net/developers.html">Developers's Site</a></li>
+				<li id="n-Project-Site"><a href="http://sourceforge.net/projects/retroshare">Project Site</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class='generated-sidebar portlet' id='p-important_pages'>
+		<h5>important pages</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-RetroShare"><a href="/wiki/index.php/RetroShare">RetroShare</a></li>
+				<li id="n-Help-the-Project"><a href="/wiki/index.php/Help_RetroShare">Help the Project</a></li>
+				<li id="n-Donations"><a href="/wiki/index.php/RetroShare_Wiki:Site_support">Donations</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class='generated-sidebar portlet' id='p-wiki'>
+		<h5>wiki</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-Rules"><a href="/wiki/index.php/RetroShare_Wiki:Rules">Rules</a></li>
+				<li id="n-help"><a href="/wiki/index.php/Help:Contents" title="The place to find out.">Help</a></li>
+			</ul>
+		</div>
+	</div>
+	<div id="p-search" class="portlet">
+		<h5><label for="searchInput">Search</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/wiki/index.php/Special:Search" id="searchform"><div>
+				<input id="searchInput" name="search" type="text" title="Search RetroShare Wiki [f]" accesskey="f" value="" />
+				<input type='submit' name="go" class="searchButton" id="searchGoButton"	value="Go" title="Go to a page with this exact name if exists" />&nbsp;
+				<input type='submit' name="fulltext" class="searchButton" id="mw-searchButton" value="Search" title="Search the pages for this text" />
+			</div></form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>Toolbox</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a href="/wiki/index.php/Special:WhatLinksHere/Ubuntu_cross_compilation_for_Windows" title="List of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+				<li id="t-recentchangeslinked"><a href="/wiki/index.php/Special:RecentChangesLinked/Ubuntu_cross_compilation_for_Windows" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+<li id="t-upload"><a href="/wiki/index.php/Special:Upload" title="Upload files [u]" accesskey="u">Upload file</a></li>
+<li id="t-specialpages"><a href="/wiki/index.php/Special:SpecialPages" title="List of all special pages [q]" accesskey="q">Special pages</a></li>
+				<li id="t-print"><a href="/wiki/index.php?title=Ubuntu_cross_compilation_for_Windows&amp;printable=yes" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>				<li id="t-permalink"><a href="/wiki/index.php?title=Ubuntu_cross_compilation_for_Windows&amp;oldid=512" title="Permanent link to this version of the page">Permanent link</a></li>			</ul>
+		</div>
+	</div>
+		</div><!-- end of the left (by default at least) column -->
+			<div class="visualClear"></div>
+			<div id="footer">
+				<div id="f-poweredbyico"><a href="http://www.mediawiki.org/"><img src="/wiki/skins/common/images/poweredby_mediawiki_88x31.png" alt="MediaWiki" /></a><a href="http://sourceforge.net"><img src="http://sflogo.sourceforge.net/sflogo.php?group_id=178712&type=1" width="88" height="31" border="0" alt="SourceForge.net Logo" /></a></div>
+				<div id="f-copyrightico"><a href="http://www.gnu.org/copyleft/fdl.html"><img src="/wiki/skins/common/images/gnu-fdl.png" alt='GNU Free Documentation License 1.2' /></a></div>
+			<ul id="f-list">
+				<li id="lastmod"> This page was last modified on 3 February 2009, at 15:47.</li>
+				<li id="viewcount">This page has been accessed 38 times.</li>
+				<li id="copyright">Content is available under <a href="http://www.gnu.org/copyleft/fdl.html" class="external " title="http://www.gnu.org/copyleft/fdl.html" rel="nofollow">GNU Free Documentation License 1.2</a>.</li>
+				<li id="privacy"><a href="/wiki/index.php/RetroShare_Wiki:Privacy_policy" title="RetroShare Wiki:Privacy policy">Privacy policy</a></li>
+				<li id="about"><a href="/wiki/index.php/RetroShare_Wiki:About" title="RetroShare Wiki:About">About RetroShare Wiki</a></li>
+				<li id="disclaimer"><a href="/wiki/index.php/RetroShare_Wiki:General_disclaimer" title="RetroShare Wiki:General disclaimer">Disclaimers</a></li>
+			</ul>
+		</div>
+</div>
+
+		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+<!-- Served in 0.225 secs. --></body></html>

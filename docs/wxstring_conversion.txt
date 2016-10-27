@@ -1,0 +1,85 @@
+    * 1 Literals
+    * 2 char* to wxString
+    * 3 wxString to char*
+    * 4 int to wxString
+    * 5 float to wxString
+    * 6 wxString to integer number
+    * 7 wxString to floating-point number
+    * 8 std::string to wxString
+    * 9 wxString to std::string
+
+[edit] Literals
+
+A literal is a string written in code with "quotes around it". A literal is not a wxString, and will not be implicitly converted to one. This means that you can never pass in a raw literal into a wxWidget function or method.
+
+MessageBox("I'm a mistake!")  // WRONG
+
+Instead, Unicode builds (prior to wxWidgets 3) require you to use one of these macros to turn literals into wxStrings:
+
+_("text that can be translated")
+wxT("text that can't be translated")
+_T("same as wxT")
+ 
+char* c = "sometext";
+wxT(c) // WRONG, not a literal
+
+Rather than being a nuisance, the _(), wxT(), and _T() macros take care of some unicode issues and help with internationalization.
+[edit] char* to wxString
+
+char* chars = "Hello world";
+wxString mystring(chars, wxConvUTF8);
+
+[edit] wxString to char*
+
+void my_function(const char* foo)
+{
+}
+...
+wxString mystring(wxT("HelloWorld"));
+my_function( mystring.mb_str() );
+
+mb_str() returns a temporary pointer. If you need to store it in a char* :
+
+wxString mystring(wxT("HelloWorld"));
+char cstring[1024];
+strcpy(cstring, (const char*)mystring.mb_str(wxConvUTF8));
+
+[edit] int to wxString
+
+wxString mystring = wxString::Format(wxT("%i"),myint);
+
+or
+
+wxString mystring;
+mystring << myint;
+
+[edit] float to wxString
+
+wxString mystring = wxString::Format(wxT("%f"), myfloat);
+
+or
+
+wxString mystring;
+mystring << myfloat;
+
+[edit] wxString to integer number
+
+wxString number(wxT("145"));
+long value;
+if(!s.ToLong(&value)) { /* error! */ }
+
+[edit] wxString to floating-point number
+
+wxString number(wxT("3.14159"));
+double value;
+if(!s.ToDouble(&value)){ /* error! */ }
+
+[edit] std::string to wxString
+
+std::string stlstring = "Hello world";
+wxString mystring(stlstring.c_str(), wxConvUTF8);
+
+[edit] wxString to std::string
+
+wxString mystring(wxT("HelloWorld"));
+std::string stlstring = std::string(mystring.mb_str());

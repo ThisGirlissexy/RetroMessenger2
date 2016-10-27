@@ -1,0 +1,9 @@
+Create a temporary working directory.
+Copy linux_build_librs.sh in it for a clean libretroshare build or you can just do every step (from the script) by yourself.
+
+You should replace the libretroshare.pro file in libretroshare/src with one of the following :
+
+Use libretroshare.pro for Release and libretroshared.pro for Debug
+!!!Change the full path for the following macros: UPNPC_DIR, GPG_ERROR_DIR and GPGME_DIR
+
+libretroshare.a will reside in libretroshare/src/lib.linux-g++

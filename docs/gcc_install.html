@@ -1,0 +1,70 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<title>GCC install instructions</title>
+	<link rel="stylesheet" type="text/css" href="default.css" />
+</head>
+<body>
+<h1  id="T1">GCC install instructions</h1>
+
+<ul>
+    <li><a href="#T2">Purpose</a></li>
+    <li><a href="#T3">Windows</a>
+    <ul>
+        <li><a href="#T4">GCC Compiler</a></li>
+        <li><a href="#T5">MSYS Build Environment</a></li>
+    </ul></li>
+    <li><a href="#T6">Linux</a>
+    <ul>
+        <li><a href="#T7">Debian Distros (Ubuntu, Kubuntu, Xubuntu)</a></li>
+        <li><a href="#T8">(Comming Soon) Fedora Distros</a></li>
+    </ul></li>
+</ul>
+
+
+
+<h2  id="T2">Purpose</h2>
+
+<p>Describe the install process of the GCC compiler. In this document we are using GCC v4.2.1, but other versions after three should work.</p>
+
+<h2  id="T3">Windows</h2>
+
+<h3  id="T4">GCC Compiler</h3>
+
+<ol>
+    <li>Download <a href="http://wxpack.sourceforge.net/Main/Downloads">MinGW v4.2.1-dw2.3</a>.</li>
+    <li>Run the installer.</li>
+    <li>Make sure to install it to <code>...\MinGW</code>, not <code>...\MinGW4</code>. (This makes setting up CodeLite easier)</li>
+    <li>You are done installing MinGW v4.2.1-dw2.3 on Windows.</li>
+</ol>
+
+<h3  id="T5">MSYS Build Environment</h3>
+
+<p>These instructions are based on MinGW.org instructions found <a href="http://www.mingw.org/node/18">here</a></p>
+
+<ol>
+    <li>Install <a href="http://downloads.sourceforge.net/mingw/MSYS-1.0.10.exe">MSYS 1.0.10</a>. I usually install it in <code>C:\msys\1.0</code>, but you can use any directory that you prefer.</li>
+    <li>Next, the post install process will ask for the directory where MinGW was installed to. Enter "<code>c:/mingw</code>". If you make a mistake, you can change it by editing the "<code>C:\msys\1.0\etc\fstab</code>" file, make sure to use 'LF line endings. An example fstab may contain:
+    c:/mingw /mingw</li>
+    <li>Install <a href="http://downloads.sourceforge.net/mingw/msysDTK-1.0.1.exe">MSYS DTK 1.0</a> in <code>C:\msys\1.0</code>.</li>
+    <li>Install <a href="http://downloads.sourceforge.net/mingw/msysCORE-1.0.11-2007.01.19-1.tar.bz2">MSYS Core 1.0.11</a>. It is an archive. Untar it in <code>C:\msys\1.0</code>.</li>
+</ol>
+
+<p>Now you should have a cyan "M" link on the Desktop. When you double-click on it, a terminal should be launched.</p>
+
+<h2  id="T6">Linux</h2>
+
+<h3  id="T7">Debian Distros (Ubuntu, Kubuntu, Xubuntu)</h3>
+
+<ol>
+    <li>Open a treminal. (Click <code>Applications-&gt;Accessories-&gt;Terminal</code>)</li>
+    <li>Type <code>sudo aptitude install build-essential gdb</code> and press 'Enter'.</li>
+    <li>After it says you are done, GCC and the GDB debugger has been installed on your system.</li>
+</ol>
+
+<h3  id="T8">(Comming Soon) Fedora Distros</h3>
+
+<p><a href="building.html">Back</a></p>
+
+</body></html>

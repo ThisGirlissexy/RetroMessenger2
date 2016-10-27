@@ -1,0 +1,147 @@
+diff -ru RetroShare-r767/libretroshare/src/rsserver/p3face-startup.cc RetroShare-work/libretroshare/src/rsserver/p3face-startup.cc
+--- RetroShare-r767/libretroshare/src/rsserver/p3face-startup.cc	2008-11-02 22:22:52.156250000 +0100
++++ RetroShare-work/libretroshare/src/rsserver/p3face-startup.cc	2008-11-02 22:24:12.562500000 +0100
+@@ -1292,6 +1292,8 @@
+ class CRYPTPROTECT_PROMPTSTRUCT;
+ */
+ 
++#if 0
++
+ #ifdef __cplusplus
+ extern "C" {
+ #endif
+@@ -1334,6 +1336,7 @@
+ #ifdef __cplusplus
+ }
+ #endif
++#endif
+ 
+ #endif
+ /******************************** WINDOWS/UNIX SPECIFIC PART ******************/
+diff -ru RetroShare-r767/libretroshare/src/scripts/config-cygwin.mk RetroShare-work/libretroshare/src/scripts/config-cygwin.mk
+--- RetroShare-r767/libretroshare/src/scripts/config-cygwin.mk	2008-11-02 22:22:47.656250000 +0100
++++ RetroShare-work/libretroshare/src/scripts/config-cygwin.mk	2008-11-02 22:24:12.546875000 +0100
+@@ -14,16 +14,16 @@
+ 
+ ###########################################################################
+ 
+-ALT_SRC_ROOT=/cygdrive/c/home/rmfern/prog/MinGW
+-SRC_ROOT=../../../..
++ALT_SRC_ROOT=/rsbuild/src
++SRC_ROOT=/rsbuild/src
+ 
+ # These never change.
+-PTHREADS_DIR=$(ALT_SRC_ROOT)/pthreads/pthreads.2
+-ZLIB_DIR=$(ALT_SRC_ROOT)/zlib-1.2.3
++PTHREADS_DIR=$(ALT_SRC_ROOT)/__LIB_PTHREADSWIN32_DIRNAME__
++ZLIB_DIR=$(ALT_SRC_ROOT)/__LIB_ZLIB_DIRNAME__
+ 
+ # pretty stable...
+-SSL_DIR=$(SRC_ROOT)/openssl-0.9.7g-xpgp-0.1c
+-UPNPC_DIR=$(SRC_ROOT)/miniupnpc-1.0
++SSL_DIR=$(SRC_ROOT)/__LIB_OPENSSLXPGP_DIRNAME__
++UPNPC_DIR=$(SRC_ROOT)/__LIB_MINIUPNPC_DIRNAME__
+ 
+ include $(RS_TOP_DIR)/scripts/checks.mk
+ 
+@@ -100,7 +100,8 @@
+ LIBS +=  -lssl -lcrypto 
+ LIBS +=  -L$(UPNPC_DIR) -lminiupnpc
+ LIBS += -L$(ZLIB_DIR) -lz 
+-LIBS += -L$(PTHREADS_DIR) -lpthreadGC2d 
++#LIBS += -L$(PTHREADS_DIR) -lpthreadGC2d 
++LIBS += -L$(PTHREADS_DIR) -lpthreadGC2 
+ LIBS += $(WINLIB) 
+ 
+ RSCFLAGS += $(WININC)
+diff -ru RetroShare-r767/libretroshare/src/scripts/config.mk RetroShare-work/libretroshare/src/scripts/config.mk
+--- RetroShare-r767/libretroshare/src/scripts/config.mk	2008-11-02 22:22:47.656250000 +0100
++++ RetroShare-work/libretroshare/src/scripts/config.mk	2008-11-02 22:24:12.546875000 +0100
+@@ -4,9 +4,9 @@
+ ###########################################################################
+ #Define OS.
+ #
+-OS = Linux
++#OS = Linux
+ #OS = MacOSX
+-#OS = Cygwin
++OS = Cygwin
+ #OS = Win # MinGw.
+ ###########################################################################
+ 
+diff -ru RetroShare-r767/libretroshare/src/tcponudp/tou.h RetroShare-work/libretroshare/src/tcponudp/tou.h
+--- RetroShare-r767/libretroshare/src/tcponudp/tou.h	2008-11-02 22:22:49.109375000 +0100
++++ RetroShare-work/libretroshare/src/tcponudp/tou.h	2008-11-02 22:24:12.546875000 +0100
+@@ -43,6 +43,7 @@
+ 	#include <winsock2.h>
+ 	#include <ws2tcpip.h>
+ 	#include <stdio.h>
++        #include <stdint.h>
+ 	typedef int socklen_t;
+ #endif
+ 
+diff -ru RetroShare-r767/libretroshare/src/tcponudp/tou_net.h RetroShare-work/libretroshare/src/tcponudp/tou_net.h
+--- RetroShare-r767/libretroshare/src/tcponudp/tou_net.h	2008-11-02 22:22:49.125000000 +0100
++++ RetroShare-work/libretroshare/src/tcponudp/tou_net.h	2008-11-02 22:24:12.562500000 +0100
+@@ -117,8 +117,10 @@
+  * ms uses millisecs.
+  * void Sleep(int ms);
+  */
++#if 0
+ void sleep(int sec); 
+ void usleep(int usec);
++#endif
+ 
+ #endif
+ /********************************** WINDOWS/UNIX SPECIFIC PART ******************/
+diff -ru RetroShare-r767/libretroshare/src/upnp/upnputil.c RetroShare-work/libretroshare/src/upnp/upnputil.c
+--- RetroShare-r767/libretroshare/src/upnp/upnputil.c	2008-11-02 22:22:47.156250000 +0100
++++ RetroShare-work/libretroshare/src/upnp/upnputil.c	2008-11-02 22:24:12.546875000 +0100
+@@ -141,14 +141,14 @@
+ 		printf("GetExternalIPAddress failed.\n");
+ 
+ // Unix at the moment!	
+-	r = UPNP_AddPortMapping(urls->controlURL, data->servicetype,
+-	                        eport, iport, iaddr, 0, 0, proto);
++//	r = UPNP_AddPortMapping(urls->controlURL, data->servicetype,
++//	                        eport, iport, iaddr, 0, 0, proto);
+ 
+ //	r = UPNP_AddPortMapping(urls->controlURL, data->servicetype,
+ //	                        eport, iport, iaddr, 0, leaseDuration, proto);
+ 
+-//	r = UPNP_AddPortMapping(urls->controlURL, data->servicetype,
+-//	                        eport, iport, iaddr, 0, proto);
++	r = UPNP_AddPortMapping(urls->controlURL, data->servicetype,
++	                        eport, iport, iaddr, 0, proto);
+ 	if(r==0)
+ 	{
+ 		printf("AddPortMapping(%s, %s, %s) failed\n", eport, iport, iaddr);
+--- RetroShare-work/retroshare-gui/src/RetroShare.pro.orig	2008-11-02 22:22:46.562500000 +0100
++++ RetroShare-work/retroshare-gui/src/RetroShare.pro	2008-11-05 21:42:37.781250000 +0100
+@@ -11,6 +11,10 @@
+ TEMPLATE = app
+ TARGET += 
+ 
++# This will allow debugging of the application code, but not for QT.
++QMAKE_CXXFLAGS_RELEASE += -g
++QMAKE_LFLAGS_RELEASE -= -Wl,-s
++
+ 
+ DEPENDPATH += . \
+             rsiface \
+@@ -424,11 +428,13 @@
+ 
+     RC_FILE = gui/images/retroshare_win.rc
+ 
+-    LIBS += -L"../../../../lib" -lretroshare -lssl -lcrypto -lpthreadGC2d -lKadC -lminiupnpc -lz
++    LIBS += -L"../../../__LIB_MINIUPNPC_DIRNAME__" -L"../../../__LIB_OPENSSLXPGP_DIRNAME__" -L"../../../__LIB_PTHREADSWIN32_DIRNAME__" -L"../../../__LIB_ZLIB_DIRNAME__" -L"games/qcheckers/lib" -L"apps/smplayer/lib" -L"../../libretroshare/src/lib" -lretroshare -lssl -lcrypto -lpthreadGC2 -lminiupnpc -lz
+     LIBS += -lqcheckers -lsmplayer 
+-    LIBS += -lws2_32 -luuid -lole32 -liphlpapi -lcrypt32-cygwin -gdi32
++    LIBS += -lws2_32 -luuid -lole32 -liphlpapi -lcrypt32 -gdi32
+     LIBS += -lole32 -lwinmm
+ 
++    INCLUDEPATH += ../../../../__LIB_MINIUPNPC_DIRNAME__ ../../../../__LIB_OPENSSLXPGP_DIRNAME__ ../../../../__LIB_PTHREADSWIN32_DIRNAME__ ../../../../__LIB_ZLIB_DIRNAME__
++
+ }
+ 
+ !win32 {

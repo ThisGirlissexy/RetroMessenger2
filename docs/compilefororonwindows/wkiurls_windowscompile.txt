@@ -1,0 +1,9 @@
+http://retroshare.sourceforge.net/wiki/index.php/Developers_Corner
+ 
+http://retroshare.sourceforge.net/wiki/index.php?title=Win32Compile&action=edit&redlink=1
+ 
+http://retroshare.sourceforge.net/wiki/index.php/Win32CompileCygwin
+ 
+CREATING A WINDOWS BUILD ENVIRONMENT FOR RETROSHARE
+http://retroshare.sourceforge.net/wiki/index.php/Win32CompileCygwin
+http://retroshare.sourceforge.net/forum/download/file.php?id=4
